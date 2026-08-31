@@ -58,3 +58,20 @@ identity + editorial + play, not conversion anatomy.
 - Scribbles/hand marks: max 1 per viewport, drawn once on reveal (no loop).
 - Cutout photos need consistent lighting/grade across the site (shoot or grade as a set).
 - Everything still ships SSR-visible; canvases and draws are progressive enhancement.
+
+## Implemented recipes (battle-tested on profissional_site, 2026-08-31)
+
+**Type mixing (next-intl):** tag accent words in messages (`"Engenharia em <em>produção</em>…"`,
+one `<u>` for the scribbled word), render with
+`t.rich("heading", { em: c => <em className="text-accent italic">c</em>, u: c => <Scribble>c</Scribble> })`.
+Rules: 1–2 words per heading; if the heading is serif, accent = italic + accent color; if sans,
+accent = serif italic. **Any other consumer of that string (aria-label, meta, OG) must switch
+to an untagged string** — `t()` on a tagged message throws FORMATTING_ERROR.
+
+**Scribble:** inline-block relative span + absolute SVG (2 crossing quadratic strokes,
+`viewBox 0 0 200 24`, `preserveAspectRatio="none"`, width 104%, height 0.5em), drawn once with
+`pathLength` after the entrance (~1.2 s delay). One per viewport.
+
+**Topo contours:** generate once (nested wobbly rings via quadratic segments around 2–3 focal
+points, stroke = fg at 5–6% alpha, ~8 KB SVG), then `background-image` on chosen sections at
+fixed px size. No blend mode, no fixed attachment — flat cost.
