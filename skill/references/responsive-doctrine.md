@@ -30,3 +30,15 @@ the worst bugs live mid-page. Also check `document.documentElement.scrollWidth <
 
 A change is not "done" until the 390px screenshots have been looked at. Desktop-only
 verification is the single most common way premium sites rot.
+
+## Failure patterns caught in the wild (add yours here)
+
+- **`sm:`-only sizing** → 16px headings on phones (the founding bug).
+- **Absolute overlays colliding at other widths.** Decorative plates/cards positioned in %
+  inside a hero looked fine at 1440, sat ON TOP of the proof text at 390. Any absolutely
+  positioned decoration must be re-checked at every breakpoint against the CONTENT flow —
+  or hidden below `sm:` and replaced by a simpler arrangement.
+- **Theme-flip sections that don't flip every component.** A `.paper` (light) section
+  overrode text colors but not `.btn-secondary` — parchment text on parchment bg =
+  invisible button. When a section flips palette, audit EVERY component that can appear
+  inside it (buttons, chips, borders, focus rings), not just text utilities.
