@@ -14,6 +14,8 @@ One skill, three registers. Pick the register first, then follow its reference. 
 | **Identity site** | person/brand/athlete/founder, editorial + play | `references/offbrand-kinetic-site.md` |
 | **Immersive hero** | any register's hero needing depth/"3D" | `references/immersive-3d-hero.md` |
 
+Cross-register mandate: `references/responsive-doctrine.md` — mobile is designed, not inherited; every breakpoint utility has a base pair; verification always includes 390px.
+
 Tokens always start from `references/design-system-blueprint.md` — never improvise values.
 
 ## Shared workflow
@@ -22,7 +24,7 @@ Tokens always start from `references/design-system-blueprint.md` — never impro
 3. **Build** with `frontend-design`; components re-skinned to tokens (21st.dev / Magic UI / SkiperUI allowed, never raw).
 4. **Motion**: CSS reveal for static HTML; `motion-foundations` → `motion-patterns` for React. GSAP/Lenis only when cinematic scroll is the brief.
 5. **Polish/QA**: `impeccable` critique → `ui-review` → `accessibility-compliance` → `seo`.
-6. **Verify by looking**: `agent-browser screenshot` at 390 and 1440, scrolled, plus a full-page capture (content must be SSR-visible — reveals never gate visibility).
+6. **Verify by looking**: follow `references/responsive-doctrine.md` — 390/768/1440 screenshots with the changed section scrolled into view, step-scroll audit at 390 for full pages, no horizontal overflow, Lighthouse mobile. Content must be SSR-visible (reveals never gate visibility). **Desktop-only verification is a bug.**
 
 ## Performance budget (premium = light; heavy kills the illusion)
 - **Weight**: hero image ≤ 250 KB (one 1200–1600w WebP/AVIF + srcset); total above-fold ≤ 600 KB; video hero ≤ 8 MB with poster; fonts: 2 families max, subset, `display: swap`.
