@@ -42,3 +42,11 @@ verification is the single most common way premium sites rot.
   overrode text colors but not `.btn-secondary` — parchment text on parchment bg =
   invisible button. When a section flips palette, audit EVERY component that can appear
   inside it (buttons, chips, borders, focus rings), not just text utilities.
+- **Unlayered CSS silently beats Tailwind v4 utilities.** A plain `.paper > * { position:
+  relative }` outranks the `@layer utilities` `.absolute` class at equal specificity —
+  the element computed `position: relative` with zero warnings. When a utility "doesn't
+  apply", check for unlayered rules hitting the same element; restate the property in
+  your own (unlayered) class.
+- **Pointer-only life = dead on touch.** Every pointermove-driven effect needs a touch
+  counterpart: autonomous drift (slow sin/cos sweep of the same motion values) and/or
+  scroll-driven offsets on `pointer: coarse`. Interactivity is an input-agnostic budget.
