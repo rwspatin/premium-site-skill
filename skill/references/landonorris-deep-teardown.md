@@ -113,3 +113,10 @@ Tiered, each shippable alone:
 5. **Hero object**: needs an asset — either a photo shoot (cutout, like OFF) or a small GLB
    (scales of justice / column capital / keyboard?) with matcap + wireframe-stroke material
    (uniforms above are the recipe) — this is the ON-equivalent.
+
+## Implementation log
+- 2026-09-01 · profissional_site: tiers 1–2 shipped. `.display-grotesk` (sans 700, caps,
+  -0.02em, lh .98; `em` inside resets to serif italic opsz 144) on all dark-section headers
+  with one brass accent word; paper sections stay serif-led. `Scrub` component (useScroll
+  offset ["start 96%","start 55%"] → y 48→0, opacity .12→1, reversible, SSR-visible) replaced
+  once-fired reveals on section headers. Lenis lerp 0.1; staggers 0.03/0.05/0.08.
