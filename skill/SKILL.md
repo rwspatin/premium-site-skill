@@ -14,7 +14,7 @@ One skill, three registers. Pick the register first, then follow its reference. 
 | **Identity site** | person/brand/athlete/founder, editorial + play | `references/offbrand-kinetic-site.md` + deep dive: `references/landonorris-deep-teardown.md` |
 | **Immersive hero** | any register's hero needing depth/"3D" | `references/immersive-3d-hero.md` |
 
-Cross-register mandates: `references/liquid-glass.md` (glass/refraction recipes — pick by what is behind the glass) · `references/responsive-doctrine.md` — mobile is designed, not inherited; every breakpoint utility has a base pair; verification always includes 390px.
+Cross-register mandates: `references/motion-teardown-protocol.md` (how to dissect any reference: sequence · trigger · timing · easing · repetition) · `references/liquid-glass.md` (glass/refraction recipes — pick by what is behind the glass) · `references/responsive-doctrine.md` — mobile is designed, not inherited; every breakpoint utility has a base pair; verification always includes 390px.
 
 Tokens always start from `references/design-system-blueprint.md` — never improvise values.
 
