@@ -32,6 +32,19 @@ Tokens always start from `references/design-system-blueprint.md` — never impro
 - **LCP** ≤ 2.5 s: backplate/poster gets `fetchpriority="high"`; canvases/shaders/Rive are progressive enhancement that fade in AFTER first paint; everything readable with JS off.
 - **Measure, don't guess**: `npx lighthouse <url> --preset=desktop` before claiming done; check total transferred in the network panel at 390px too.
 
+## Motion doctrine: Guide · Connect · Respond (Altra Labs M2-A3)
+Every animation must do at least one of three jobs, or it gets cut:
+- **Guide** — direct attention: stagger the hierarchy (headline → support → details), never
+  everything at once. The reveal order IS the visual hierarchy.
+- **Connect** — show continuity: section transitions, progress, page veils. Same rhythm
+  repeated per section = predictability; after 2-3 sections the user "knows" the site.
+- **Respond** — confirm action: hover/press/focus/expand/submit each gets a small state
+  change. Dozens of tiny consistent responses > one big effect.
+Timing: short and fast for feedback; slower only for large transitions/impact moments.
+An opening sequence may build anticipation but never makes the user wait for content.
+Premium = simple moves (fade/slide/small scale) + controlled timing + one shared direction;
+if every element moves differently, motion competes with content.
+
 ## Micro-motion (the OFF+BRAND feel, cheap)
 Every interactive atom gets a state (hover/press/reveal), via motion variants or SVG
 `pathLength` draws. Adopt `@rive-app/react-canvas` (~40 KB) only when a real state machine
