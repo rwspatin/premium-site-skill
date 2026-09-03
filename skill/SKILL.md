@@ -12,7 +12,7 @@ One skill, three registers. Pick the register first, then follow its reference. 
 |---|---|---|
 | **Sales LP** | product/pack/course/infoproduto, conversion anatomy | `references/sales-lp-grigoletto.md` (+ extracted CSS) |
 | **Identity site** | person/brand/athlete/founder, editorial + play | `references/offbrand-kinetic-site.md` + deep dive: `references/landonorris-deep-teardown.md` |
-| **Immersive hero** | any register's hero needing depth/"3D" | `references/immersive-3d-hero.md` |
+| **Immersive hero** | any register's hero needing depth/"3D" | `references/immersive-3d-hero.md` · R3F/no-Blender layer: `references/webgl-r3f-doctrine.md` |
 
 Cross-register mandates: `references/build-plan-protocol.md` (reference curation: 3-question test, nameable blocks, ordered plan) · `references/motion-teardown-protocol.md` (how to dissect any reference: sequence · trigger · timing · easing · repetition) · `references/liquid-glass.md` (glass/refraction recipes — pick by what is behind the glass) · `references/responsive-doctrine.md` — mobile is designed, not inherited; every breakpoint utility has a base pair; verification always includes 390px.
 
