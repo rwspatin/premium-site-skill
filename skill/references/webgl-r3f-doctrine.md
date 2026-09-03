@@ -75,3 +75,11 @@ choreography); GSAP/motion covers scroll-driven work.
 3D is necessary (not decoration) · readable without WebGL · reduced-motion kills camera
 moves/scrub · optimized assets · cleaned-up timelines/triggers on unmount · single rAF ·
 smooth on mid hardware · mobile intentionally composed.
+
+## Implementation log
+- 2026-09-03 · profissional_site hero: procedural ionic wire column (LineSegments, ~1.6k
+  segments: fluted shaft w/ entasis, archimedean volutes, abacus edges), brass
+  AdditiveBlending opacity .55, drift + damped pointer tilt (touch: sin/cos sweep).
+  next/dynamic ssr:false + unmount when hero >300px offscreen (useInView gate) →
+  zero cost below the fold. Rendered OVER the photographic backdrop as a living
+  technical drawing - complement, not replacement.
