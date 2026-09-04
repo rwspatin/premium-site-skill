@@ -14,6 +14,8 @@ One skill, three registers. Pick the register first, then follow its reference. 
 | **Identity site** | person/brand/athlete/founder, editorial + play | `references/offbrand-kinetic-site.md` + deep dive: `references/landonorris-deep-teardown.md` |
 | **Immersive hero** | any register's hero needing depth/"3D" | `references/immersive-3d-hero.md` · R3F/no-Blender layer: `references/webgl-r3f-doctrine.md` |
 
+Prompt library: `references/prompt-library/INDEX.md` — five complete single-file recreation prompts (with GLSL and exact values) + preview videos; study/scaffold material and the fidelity bar for our own prompts.
+
 Cross-register mandates: `references/ai-prompting-protocol.md` (build plan → 5-part prompt: context·stack·structure·behavior·constraints; refine one section at a time) · `references/build-plan-protocol.md` (reference curation: 3-question test, nameable blocks, ordered plan) · `references/motion-teardown-protocol.md` (how to dissect any reference: sequence · trigger · timing · easing · repetition) · `references/liquid-glass.md` (glass/refraction recipes — pick by what is behind the glass) · `references/responsive-doctrine.md` — mobile is designed, not inherited; every breakpoint utility has a base pair; verification always includes 390px.
 
 Tokens always start from `references/design-system-blueprint.md` — never improvise values.
