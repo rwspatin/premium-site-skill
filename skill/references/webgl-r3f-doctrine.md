@@ -89,3 +89,11 @@ smooth on mid hardware · mobile intentionally composed.
   composition (here: survey marks annotating the photographed stone; oscillation, never full
   spin, to hold the alignment); (3) **additive-blended lines vanish over bright imagery** —
   double-pass ink (normal blending) under glow (additive) reads on any backdrop.
+- 2026-09-06 · v3 (Playwright box-audit round): alignment is MEASURED, not eyeballed —
+  getBoundingClientRect every art element, find shared edges (or their absence). Lessons:
+  (1) when overlaying 3D on a photo, match the photo's perspective — a near-frontal photo
+  tolerates ≤4° of drawing rotation before the two systems visibly fight; (2) less geometry,
+  more anchoring: ONE surveyed volute aligned to the real one beats a whole column floating;
+  (3) R3F gotcha: any channel useFrame writes (e.g. position.y for a bob) silently overrides
+  the declarative prop — bake the base value into the useFrame expression;
+  (4) decorative plates need a shared alignment grid (common right edge) or they read random.
