@@ -19,6 +19,9 @@ Cross-register mandates: `references/ai-prompting-protocol.md` (build plan → 5
 Tokens always start from `references/design-system-blueprint.md` — never improvise values.
 
 ## Shared workflow
+0. **Open the project right**: `references/project-direction-protocol.md` - positioning (who/
+   for whom/what feeling) → direction file (PRODUCT.md/DESIGN.md) → hero first → page as
+   chapters planned before built.
 1. **Copy first** (`/copywriting`; `/viral-product-strategist` if the offer is weak).
 2. **Tokens** from the Blueprint (dark glass or light paper `:root`).
 3. **Build** with `frontend-design`; components re-skinned to tokens (21st.dev / Magic UI / SkiperUI allowed, never raw).
