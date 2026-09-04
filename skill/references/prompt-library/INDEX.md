@@ -20,3 +20,15 @@ Rules of use:
 - The techniques are extractable individually (e.g. stride's hero-into-card scroll move,
   fromzero's analytic reflection) - cite the file when porting one.
 - Preview videos (`*-preview.mp4`, 640px) show the expected end state - watch before running.
+
+## Benchmark run (2026-09-06)
+`stride.md` executed end-to-end by the skill pipeline → `bench/stride/index.html` (58 KB,
+single file). Result vs the reference video: **high fidelity** — preloader (counter + gradient
+bar grow-and-slide), plasma burst (60 filaments + 700 sparks + core + bloom, cursor magnet),
+hero shrink-into-card, alpha-ramped per-letter headings, scroll-linked marquees, About
+chips timeline, stats bento, showcase hover columns, 400vh pinned portfolio cylinder
+(idx/name meta live), chain/heart chrome GLBs (Draco) over seeded mesh gradients, layered
+pinned footer reveal, contact form dots. Known deltas: burst slightly denser/brighter than
+the reference; faint grey rectangle behind the core over the gradient (core-sprite plane +
+bloom under mix-blend lighten — fixable by fading the halo to zero before the plane edge).
+Verdict: the 5-part max-fidelity prompt format reproduces near-1:1; this is the fidelity bar.
