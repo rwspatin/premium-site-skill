@@ -83,3 +83,9 @@ smooth on mid hardware · mobile intentionally composed.
   next/dynamic ssr:false + unmount when hero >300px offscreen (useInView gate) →
   zero cost below the fold. Rendered OVER the photographic backdrop as a living
   technical drawing - complement, not replacement.
+- 2026-09-04 · v2 lessons (after "ficou simples e solto" feedback): (1) raw uniform wireframe
+  reads as debug output — craft = line hierarchy + depth fade + partial dissolve + a scan
+  band (time uniform), not more geometry; (2) a floating 3D object must be ANCHORED to the
+  composition (here: survey marks annotating the photographed stone; oscillation, never full
+  spin, to hold the alignment); (3) **additive-blended lines vanish over bright imagery** —
+  double-pass ink (normal blending) under glow (additive) reads on any backdrop.
