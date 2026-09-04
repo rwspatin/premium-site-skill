@@ -101,3 +101,17 @@ which one you're in saves hours.
 ## Model tiers
 Trivial edits → cheap model · refine/debug → mid model · structural rethink, full motion
 choreography, 3D integration → strongest model. Models never replace direction.
+
+## The polish pass (Altra M3 — spacing/balance lesson)
+Late stage: structure is done; the work becomes hunting SMALL imbalances, one precise
+instruction each, several agents in parallel on different spots.
+- **Depth by z-sandwich**: layering type behind AND in front of a visual ("lower 'Becomes'
+  behind the structure, upper one in front") is the cheapest real-depth move there is —
+  same mechanism as landonorris' helmet-through-type hero.
+- **Proportional micro-asks**: "move the text slightly up, extend the bottom by ~25%" —
+  refining proportions, never rebuilding. Name section + element + direction + rough amount.
+- **Viewport containment**: a featured/showcase section that overflows the viewport height
+  breaks its composition — "it must sit fully inside the viewport" is a valid, precise ask.
+- **Parallelize the small stuff**: independent micro-fixes can run as simultaneous agents;
+  precision of each description is what makes one-shot success (and cheap runs) possible —
+  the worse the description, the more re-dos, time and tokens.
