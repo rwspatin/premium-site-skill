@@ -139,3 +139,8 @@ INTENTIONAL.
 The course's own closing point: the value is the PROCESS - turning creative direction into
 precise instructions, and diagnosing with clarity. Every brand demands different solutions;
 think as a designer creating experiences, not as someone assembling pages.*
+
+*Applied 2026-09-06 (profissional_site): closing-chapter reveal done as the INVERTED variant
+(fixed footer beneath a z-raised main + height spacer) because the footer was global to the
+layout. Gate: footer fits viewport, lg+, no reduced-motion. Gotcha: the main wrapper MUST
+paint an opaque background or transparent sections ghost the footer through mid-page.*
