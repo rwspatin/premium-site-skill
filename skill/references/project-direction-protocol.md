@@ -43,3 +43,18 @@ A site is a SEQUENCE, not a stack: each section prepares the next. Workflow:
 
 Hero-first sequence: positioning → visual direction → main element → composition →
 implement & refine detail by detail → its language governs everything after.
+
+## 5. Working the visual elements (Altra M3 — visuals lesson)
+- **Rules are defaults; the vision outranks them.** "White space matters, but I have a
+  different idea for this composition" is a legitimate call - break a guideline
+  deliberately when the compositional intention is clear and stated. (Doctrine protects
+  against accident, not against direction.)
+- **Handing assets to the agent**: give the images + placement ("statue center-left, concrete
+  slab center-right") + the ILLUSION wanted ("make it read as embedded INTO the concrete"),
+  plus a visual reference of the effect - and let the agent pick the technique (SVG mask,
+  blend, displacement). Describe the result, not the implementation.
+- **Visual bug reports = expected vs observed, tied to the trigger**: "fragments should
+  appear one per step, transparent → fully visible as each wireframe completes with scroll;
+  currently I can't see the state completing across steps. Analyze the problem and fix."
+  Never just "it's broken". Then accept incrementally ("better - still needs X") - the
+  constant loop is analyze, adjust, ELIMINATE until the composition matches the vision.
