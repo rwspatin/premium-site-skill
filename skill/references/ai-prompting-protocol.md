@@ -32,3 +32,31 @@ should operate when generating: never start from a vague ask.
 When building from scratch: write the build plan (build-plan-protocol.md) → expand into the
 5 parts → generate structure → verify at 390/1440 → refine hero → propagate its standard.
 Motion is a separate pass (motion doctrine + teardown vocabulary).
+
+---
+
+# Motion prompting (Altra Labs — motion lesson, the pair of the above)
+
+You don't need to master animation tech — you need to describe **what happens, when, and how
+it should feel**. Never "add an animation" (leaves every decision open) and never implementation
+words (opacity/translate/easing curves) in the first pass.
+
+## The behavior vocabulary (one word each, prompt-ready)
+- **Reveal** — how ONE element enters: "starts less visible, appears gradually, rises slightly."
+- **Stagger** — how SIMILAR elements enter relative to each other: "one after another with
+  small intervals" (order + feeling; no numbers in the first prompt).
+- **Hover** — response to proximity; must communicate ONE thing (usually "this is interactive").
+- **Micro-interaction** — response to a specific action (accordion opens, item selects);
+  confirms the action registered; never flashy.
+- **Parallax** — describe the RELATION, not the effect: "background image moves slightly
+  slower than the foreground content while scrolling."
+- **Sequence** — the order of events, explicitly: "first X, then Y, then Z." Controlling
+  order = controlling attention; this is what turns motion into direction.
+- 3D only when it adds value — it obeys the same reveal/sequence system as everything else.
+
+## Layered workflow (never one giant prompt)
+Apply ONE behavior layer at a time, check it live, then add the next:
+1. Reveals → 2. Staggers → 3. Hovers → 4. Micro-interactions → 5. Parallax → 6. Sequence tuning.
+If a layer breaks, fix THAT layer. Iterate on sensation ("too fast" → describe the feeling
+again), not on code. Avoid the classic failure: when everything moves, nothing reads —
+motion supports hierarchy, never competes with it.
