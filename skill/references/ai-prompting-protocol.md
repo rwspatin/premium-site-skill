@@ -115,3 +115,27 @@ instruction each, several agents in parallel on different spots.
 - **Parallelize the small stuff**: independent micro-fixes can run as simultaneous agents;
   precision of each description is what makes one-shot success (and cheap runs) possible —
   the worse the description, the more re-dos, time and tokens.
+
+## Final QA pass (Altra M3 — closing lesson)
+The last stage before calling it done: hunt for anything not smooth, consistent and
+INTENTIONAL.
+- **Signature details**: even the scrollbar can be designed (twin edge progress bars that
+  complete each other at page end) - small authored touches are what make a site feel
+  "realized" instead of assembled.
+- **Behavior bugs, described precisely**: e.g. a pinned horizontal section must finish ALL
+  its horizontal travel before releasing vertical scroll - diagonal drift to the next
+  section is a bug. Same expected-vs-observed discipline as always.
+- **Collision sweep**: elements overlapping/conflicting across sections (an image from one
+  section invading another) - position audits at every breakpoint.
+- **Materials to the end**: even nav labels can be treated as material ("engraved directly
+  into the marble") - the art direction goes down to the smallest text.
+- **The full walkthrough**: scroll the entire site start to finish as a viewer, checking the
+  NARRATIVE - every section connects into one story, the composition ends with the same art
+  direction it opened with. Only then is it done.
+
+---
+
+*Course status: Altra Labs curriculum (M1–M3) fully absorbed into this skill, 2026-09-05.
+The course's own closing point: the value is the PROCESS - turning creative direction into
+precise instructions, and diagnosing with clarity. Every brand demands different solutions;
+think as a designer creating experiences, not as someone assembling pages.*
