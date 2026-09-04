@@ -60,3 +60,44 @@ Apply ONE behavior layer at a time, check it live, then add the next:
 If a layer breaks, fix THAT layer. Iterate on sensation ("too fast" → describe the feeling
 again), not on code. Avoid the classic failure: when everything moves, nothing reads —
 motion supports hierarchy, never competes with it.
+
+---
+
+# The refinement loop (Altra Labs — review lesson)
+
+The first generation is a draft, never the verdict. Premium results come from directing
+revisions with clarity, not from nailing the perfect prompt.
+
+## Diagnose before re-prompting
+Look at the page and NAME the problem first (inconsistent spacing? odd alignment? motion
+exaggerated? interaction mushy?). **If you can't clearly explain what's wrong, you can't
+clearly ask for what's right.** "Fix this section" forces the AI to guess.
+
+## The fix-prompt pattern
+Problem, named + the change + **what must stay intact**:
+> "The spacing between headline and paragraph feels too loose and the section feels generic.
+> Tighten the spacing and create stronger hierarchy with more white space. **Keep the same
+> content and overall layout.**"
+Saying what to preserve is as important as saying what to change.
+
+## Classify every problem into ONE layer, fix in this order
+**Structure → Motion → Interaction → Polish (visual design) → Performance** — plus **Voice**
+(everything works but feels cheap/generic → typography, spacing, hierarchy, color reduction,
+visual balance: "reduce color, improve balance, make it feel more intentional").
+One layer per prompt. Improving layout can break motion; improving motion can break
+interaction — mixed prompts hide which change did what.
+
+## The supervised-change loop
+locate → classify → isolate → prompt → preview & compare → **accept or reject** → only then
+advance. Every prompt is one supervised change, not "solve everything".
+
+## Refine vs Rebuild
+After several failed refinements on the same section, stop insisting:
+> "Rebuild the section from scratch keeping the same content. The current structure does not
+> match the intended direction."
+Refine = the foundation is right, improve it. Rebuild = the foundation is wrong. Knowing
+which one you're in saves hours.
+
+## Model tiers
+Trivial edits → cheap model · refine/debug → mid model · structural rethink, full motion
+choreography, 3D integration → strongest model. Models never replace direction.
