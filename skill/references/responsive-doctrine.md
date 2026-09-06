@@ -50,3 +50,7 @@ verification is the single most common way premium sites rot.
 - **Pointer-only life = dead on touch.** Every pointermove-driven effect needs a touch
   counterpart: autonomous drift (slow sin/cos sweep of the same motion values) and/or
   scroll-driven offsets on `pointer: coarse`. Interactivity is an input-agnostic budget.
+- **Fixed-hero + slide-over pages leak siblings.** When a page uses a fixed backdrop with
+  content in a `relative z-10` wrapper, ANY layout sibling outside that wrapper (the global
+  footer, banners) paints BEHIND the fixed layer and shows only fragments. Every sibling of
+  the slide-over wrapper needs the same stacking treatment (relative + z + opaque bg).
