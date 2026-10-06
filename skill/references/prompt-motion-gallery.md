@@ -1,43 +1,153 @@
-# Prompt Motion — motion-video prompts made with Opus 5.5
+# Prompt Motion — animation reference library
 
 [prompt-motion.com](https://prompt-motion.com/) (curated by @p4nthera_): ~230 motion videos
 made with Claude Opus 5.5, each with the exact prompt or skill behind it and a link to the
-creator's post. Filter "Prompt" vs "Skill"; sort by popular. Videos and prompts belong to
-their creators — study and cite, never ship one verbatim.
+creator's post. We use it ONLY as a reference for animation: watch the video, read the
+prompt, borrow the technique. Videos and prompts belong to their creators — cite the entry
+when porting a move, never ship one verbatim.
 
-Use it as (a) the fidelity bar for motion/promo prompts, next to `prompt-library/` (which is
-the bar for single-file sites), and (b) a reference hunt before a Remotion/HTML film:
-search a genre ("launch film", "kinetic type", "explainer", "showreel", "remake comparison").
+How to search it: the site sorts by popular and filters Prompt vs Skill. Each entry page has
+the video, the full prompt (or the skill repo) and the original post. Pick 2–3 references by
+the MOVE you need (morph, kinetic type, a style), not by product category.
 
-## Anatomy of the strongest prompts (e.g. "Launch video remake comparison", @notdwd)
-Tagged blocks, in this order:
-1. `<inputs>` — what to ask the user for (name, logo, colours, copy, track) + defaults if skipped.
-2. `<direction>` — canvas/fps/duration, feel in one line, palette by ROLE, type, the story
-   beat by beat, and a **Banned** line ("crossfades, frozen frames, stock UI kits, glows on UI
-   text, Math.random, anything that looks like a template"). Same idea as our NEVER list
-   (`design-world-never-protocol.md`), applied to motion.
-3. `<structure>` — per shot, frame ranges and keyframe values in stage px
-   ("y932 f0 → 776 f2 → 683 f5 …"), cuts locked to the beat grid (BPM → frames per beat).
-4. `<build>` — rendering contract: one page drawn by `seek(t)` as a pure function of the
-   frame; keyframe tables + interpolation (continuous values, no `Math.floor` on motion);
-   seeded hashes instead of `Math.random`; directional blur via SVG feGaussianBlur x/y;
-   frosted glass = blurred, lightened copy of what's behind clipped to the shape; render one
-   screenshot per frame after fonts load; encode H.264 yuv420p.
-5. `<gotchas>` — measure text after fonts load, long names must scale the lockup, white on
-   white needs a 1px edge.
-6. `<start>` — ask for inputs, then show **4 named stills** at specific frames before the
-   full render.
+## What the library teaches
+- **One-liners vs specs.** Many top showreels are a single sentence ("make a 15-second motion
+  graphics showreel that shows what an incredible motion designer you are... go all out") —
+  Opus's taste does the work. Use that for exploration. For brand/product films, the winners
+  are full specs (below). Explore loose, ship specific.
+- **The 6-block spec** (e.g. "Launch video remake comparison", "Shape morphing through UI
+  states"): `<inputs>` what to ask + defaults · `<direction>` canvas/fps/duration, feel,
+  palette by ROLE, type, story, and a **Banned** line · `<structure>` per-shot frame ranges and
+  keyframe values, cuts locked to the beat (BPM → frames/beat) · `<build>` deterministic
+  `seek(t)` render, keyframe tables, seeded randomness, per-frame screenshots ·
+  `<gotchas>` · `<start>` ask inputs, then show 4 named stills before the full render.
+- **Banned lines are NEVER lists for motion**: "bouncy easing, particle bursts, glow",
+  "crossfades, frozen frames, stock UI kits, glows on UI text, anything that looks like a
+  template", "no beige 'artsy' look, no eyebrow labels", "no generic push/slide/rotate-swing",
+  "no animator jargon on screen". Same discipline as `design-world-never-protocol.md`.
+- **Recurring craft rules worth stealing**:
+  - One element, never cut: the same shape morphs size/radius/colour while its content
+    swaps behind a short blur; a cursor drives each change; last frame = first frame (loop).
+  - Springs with at most a tiny overshoot; exponential ease-out entrances; leave on an
+    accelerating move or a blur ramp; blur follows speed and direction (directional smear).
+  - One primary move per transition; a new idea every 1.5–2 s; a sound on every hit.
+  - Set every from-state at t=0 (seek-safe); never cover an exit.
+  - Copy rules inside the prompt: no invented results/figures, name what the product does,
+    not the abstraction.
+- **Stack note**: several entries use HyperFrames (HTML+GSAP → video, heygen) instead of
+  Remotion; the deterministic per-frame contract is the same. Ours stays Remotion
+  (`agentic-media-kit` → capture · compose · publish). Mapping: keyframe tables →
+  `interpolate`, seeded random → `random(seed)`, stills checkpoint →
+  `npx remotion still <id> --frame=N` and LOOK before `render`.
 
-The short creative prompts that also rank (e.g. "Engraving-style Claude ad", @LexnLin) win
-on taste rules instead of numbers: "no beige 'artsy' look, no eyebrow labels", "borrow
-techniques but change the design so it looks like your own taste", "every morph has to be
-perfect" — the same tells our NEVER lists ban on sites.
+## Catalog (curated by technique, popular-first as of 2026-10-06)
 
-## How we apply it
-- Remotion is already deterministic per frame (`useCurrentFrame`), so the `<build>` contract
-  maps 1:1: keyframe tables → `interpolate`, seeded randomness → `random(seed)`, stills
-  checkpoint → `npx remotion still <id> --frame=N` and LOOK before `render`.
-- Write promo prompts in the 6-block shape; keep the Banned line; checkpoint stills.
-- Pipeline for our own films: `agentic-media-kit` (capture → compose → publish).
-- Opportunity: the gallery takes submissions ("Submit") — a finished piece with its prompt
-  can be listed there (ask the user before submitting anything).
+### UI / product motion (states, cursor, morphs)
+
+- [Shape morphing through UI states](https://prompt-motion.com/twoclipping-5cba86) · @twoclipping
+- [Morphing UI states loop](https://prompt-motion.com/demonugc-4c5753) · @demonugc
+- [Launch video remake comparison](https://prompt-motion.com/notdwd-c2037d) · @notdwd
+- [Frame by Frame launch video](https://prompt-motion.com/notdwd-7de38a) · @notdwd
+- [Badge unlock screen animation](https://prompt-motion.com/bthreeagency-b9b8d9) · @BThreeAgency
+- [Photo print app launch film](https://prompt-motion.com/twoclipping-221cab) · @twoclipping
+- [Spotify product film](https://prompt-motion.com/brainextends-e19ac3) · @brainextends
+- [Dub promo video](https://prompt-motion.com/steventey-0d20e4) · @steventey
+- [TypingMind logo reveal](https://prompt-motion.com/tdinh-me-815acb) · @tdinh_me
+
+### Launch & product films (SaaS promos)
+
+- [Reddit marketing tool launch video](https://prompt-motion.com/anthonyriera-9b1b2a) · @anthonyriera
+- [Lightspark social promo video](https://prompt-motion.com/davidmarcus-a28a60) · @davidmarcus
+- [SuperX feature release teaser](https://prompt-motion.com/robj3d3-b18fad) · @robj3d3
+- [mdfor.dev product intro video](https://prompt-motion.com/ho-ba-f3f0e9) · @HO_BA
+- [founder.page launch video](https://prompt-motion.com/ratheejaisal-1f4538) · @RatheeJaisal
+- [Supademo launch video](https://prompt-motion.com/jhylee95-e1152f) · @jhylee95
+- [Ren app launch video](https://prompt-motion.com/macrohou-33959d) · @macrohou
+- [Paper-style product launch film](https://prompt-motion.com/ik-builds-b8bdcf) · @ik_builds
+- [Supasito launch video](https://prompt-motion.com/wozu-co-242285) · @wozu_co
+- [Database client launch video](https://prompt-motion.com/iammxfschr-d68f90) · @iamMXFSCHR
+
+### Kinetic typography
+
+- [Bold kinetic type showreel](https://prompt-motion.com/shneural-2abdfa) · @shneural
+- [Kinetic type showreel](https://prompt-motion.com/zheke-38deff) · @zheke
+- [Kinetic type motion showreel](https://prompt-motion.com/topi-003-9ca6b5) · @_topi_003
+- [Bold typographic motion showreel](https://prompt-motion.com/motiondsgnr-9dcfa6) · @motiondsgnr
+- [Type, form, space showreel](https://prompt-motion.com/web3wesley-7bb108) · @Web3Wesley
+- [Kinetic type and particle showreel](https://prompt-motion.com/m1n9-k7-ff9ab9) · @m1n9_k7
+- [Kinetic type showreel](https://prompt-motion.com/itsuki-dev-10942d) · @itsuki_dev
+- [Kinetic type self-portrait](https://prompt-motion.com/souravbhar871-61f424) · @souravbhar871
+
+### Easing, morphing & motion-principles showreels
+
+- [Easing and morphing showreel](https://prompt-motion.com/roundtablespace-d3a1be) · @RoundtableSpace
+- [Motion techniques showreel](https://prompt-motion.com/lukasersil-0ed38e) · @lukasersil
+- [Motion principles showreel](https://prompt-motion.com/chatgptastra-0d95c7) · @ChatGptAstra
+- [Motion design principles reel](https://prompt-motion.com/tolgayhickiran-e90799) · @tolgayhickiran
+- [Keyframe motion design reel](https://prompt-motion.com/grace-sunnyy-29bc61) · @Grace_sunnyy
+- [Kinetic shapes showreel](https://prompt-motion.com/shinskinakamoto-20190b) · @Shinskinakamoto
+- [Shape and dot motion showreel](https://prompt-motion.com/umangratani-57f86a) · @umangratani
+- [Geometric motion designer showreel](https://prompt-motion.com/leonkohli-6dc01b) · @LeonKohli
+
+### Distinct visual styles (art direction to borrow)
+
+- [Engraving-style Claude ad](https://prompt-motion.com/lexnlin-038035) · @LexnLin
+- [Swiss-style motion showreel](https://prompt-motion.com/levabashidze-2d713a) · @levabashidze
+- [Blue editorial motion showreel](https://prompt-motion.com/fionntobin-97b7af) · @fionntobin
+- [Risograph studio intro](https://prompt-motion.com/rneayan-474bcf) · @rneayan
+- [Oscilloscope-style studio motion graphic](https://prompt-motion.com/rneayan-ea6129) · @rneayan
+- [Clay-style music video](https://prompt-motion.com/davidshulmanfl-371638) · @DavidShulmanFL
+- [Shadow theatre home story](https://prompt-motion.com/x4b47x-9cc84f) · @x4b47x
+- [Sketchbook animals come alive](https://prompt-motion.com/abderrahmen-g-9e8ed0) · @abderrahmen_g
+- [Poster breaking its frame](https://prompt-motion.com/pankajkumar-dev-0bee87) · @pankajkumar_dev
+- [Deliberately terrible motion showreel](https://prompt-motion.com/henkpoley-3d3407) · @HenkPoley
+
+### Explainers, data & timelines
+
+- [Recursion explained in genres](https://prompt-motion.com/emollick-8661a8) · @emollick
+- [Animated business explainer](https://prompt-motion.com/alex-prompter-1ea044) · @alex_prompter
+- [Derivative concept explainer](https://prompt-motion.com/linearuncle-5d2bae) · @LinearUncle
+- [History of AI timeline](https://prompt-motion.com/kloss-xyz-fe0c31) · @kloss_xyz
+- [What is Git explainer](https://prompt-motion.com/yunn260414-60d996) · @Yunn260414
+- [Moroccan political history timeline](https://prompt-motion.com/triglyceee-bd5b08) · @TrigLyceee
+- [Pixel art LLM history](https://prompt-motion.com/pluginplay-3d4006) · @PluginPlay__
+- [First & 10 yellow line explainer](https://prompt-motion.com/blueoctopusai-dd17bd) · @blueoctopusai
+- [Photon journey from the Sun](https://prompt-motion.com/apoorvjain25-d24184) · @apoorvjain25
+- [What happens in one second](https://prompt-motion.com/nolkeeg-bf062e) · @nolkeeg
+- [Token bucket rate limiter](https://prompt-motion.com/parkerrex-1a54fe) · @ParkerRex
+
+### 3D, particles & generative
+
+- [Particle sphere motion reel](https://prompt-motion.com/blue-clarity-ef56d0) · @blue_clarity
+- [AI data centre 3D tour](https://prompt-motion.com/sayan-shanky-f850d8) · @Sayan_shanky
+- [AI data centre 3D film](https://prompt-motion.com/mdaman010-e7226a) · @mdaman010
+- [Three.js Skyraider aircraft model](https://prompt-motion.com/buildfastwithai-ed9447) · @BuildFastWithAI
+- [Beat-synced bouncing 3D ball](https://prompt-motion.com/gorden-sun-041f56) · @Gorden_Sun
+- [Ball escaping twelve rings](https://prompt-motion.com/kantamk-61f410) · @kantamk
+- [Collision-driven music machine](https://prompt-motion.com/kamstudiolabs-447565) · @KamStudioLabs
+- [UK dubstep track with ASCII visuals](https://prompt-motion.com/rames-jusso-589f80) · @Rames_Jusso
+
+### Scroll / web sections
+
+- [Five scroll-based sections](https://prompt-motion.com/ercankeskinx-ec2568) · @ercankeskinx
+- [Developer portfolio site showreel](https://prompt-motion.com/wani-shola-16ca7a) · @wani_shola
+- [Studio website showreel](https://prompt-motion.com/andginja-333d32) · @andginja
+
+### Skills (repos to study)
+
+- [Cinetic skill launch film](https://prompt-motion.com/lexnlin-6161a6) · @LexnLin
+- [Reddit marketing tool launch video](https://prompt-motion.com/anthonyriera-9b1b2a) · @anthonyriera
+- [Animated agent session story](https://prompt-motion.com/jake11moran-a269c4) · @jake11moran
+- [Indian civilisation history film](https://prompt-motion.com/buildfastwithai-53234e) · @BuildFastWithAI
+
+Skill repos behind those entries: [cinetic](https://github.com/Leonxlnx/cinetic) ·
+[product-film-skill](https://github.com/Rieranthony/product-film-skill) ·
+[hyperframes session-story](https://github.com/heygen-com/hyperframes-community-skills/tree/master/skills/session-story) ·
+[generative-film-skill](https://github.com/buildfastwithai/buildfast-skills/tree/main/generative-film-skill).
+Read a skill before reinventing a film pipeline; adopt pieces, re-skin to our tokens.
+
+## Using it on a site (not just videos)
+The moves port to web motion (motion/react, CSS): UI-state morph → shared-layout
+transitions (`layoutId`); kinetic type → SplitText reveals ordered by hierarchy; directional
+blur on fast moves → `filter: blur()` keyed to velocity, only on transform-driven elements.
+Still obey Guide · Connect · Respond (SKILL.md) and the performance budget.
