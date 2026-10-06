@@ -161,6 +161,14 @@ Recipe (renanspatin.com, "Como posso ajudar" diagram, 2026-10-06):
   with a short blur and STAYS (ledger), so the end state explains itself.
 - Server, reduced motion and print render the finished state (all logs visible): use a
   constant `useMotionValue(1)` until hydrated or when `useReducedMotion()`.
+- **Scroll or loop?** Scroll-driven felt like work to the reader on the real site; the
+  shipped version loops on time instead: `animate(cycle, 1, { duration: 7, ease: "linear",
+  repeat: Infinity })` started/stopped by `useInView`, sequence on 0–0.8 of the cycle, the
+  finished ledger holds, then a fade so every cycle starts empty (last frame = first frame).
+  Keep scroll-driven for storytelling sections where the reader is the clock.
+- Scroll "feels dense/heavy" is usually inertia + content lag, not fps (headless at 4x CPU
+  throttle measured 60 fps either way): Lenis `lerp` 0.1 → 0.16 and scroll-scrubbed entrance
+  travel 48 → 24 px fixed it.
 - Sticky panels don't move relative to the viewport — drive them from the scrolling
   sibling (the list/grid), not from the panel itself. Tune `offset` until the sequence
   finishes while the drawing is fully on screen (desktop `["start 60%","start 5%"]`,
