@@ -15,8 +15,9 @@ One skill, three registers. Pick the register first, then follow its reference. 
 | **Immersive hero** | any register's hero needing depth/"3D" | `references/immersive-3d-hero.md` · R3F/no-Blender layer: `references/webgl-r3f-doctrine.md` |
 
 Prompt library: `references/prompt-library/INDEX.md` — five complete single-file recreation prompts (with GLSL and exact values) + preview videos; study/scaffold material and the fidelity bar for our own prompts.
+Motion/promo films: `references/prompt-motion-gallery.md` — prompt-motion.com (Opus 5.5 motion videos + their prompts); the 6-block motion prompt anatomy (inputs·direction·structure·build·gotchas·start) and the stills-before-render checkpoint.
 
-Cross-register mandates: `references/ai-prompting-protocol.md` (build plan → 5-part prompt: context·stack·structure·behavior·constraints; refine one section at a time) · `references/build-plan-protocol.md` (reference curation: 3-question test, nameable blocks, ordered plan) · `references/motion-teardown-protocol.md` (how to dissect any reference: sequence · trigger · timing · easing · repetition) · `references/liquid-glass.md` (glass/refraction recipes — pick by what is behind the glass) · `references/responsive-doctrine.md` — mobile is designed, not inherited; every breakpoint utility has a base pair; verification always includes 390px.
+Cross-register mandates: `references/design-world-never-protocol.md` (Design World sentence + 8–12 concrete NEVERs written before code; blind screenshot-only critique + code scan before editing; fix at token level) · `references/ai-prompting-protocol.md` (build plan → 5-part prompt: context·stack·structure·behavior·constraints; refine one section at a time) · `references/build-plan-protocol.md` (reference curation: 3-question test, nameable blocks, ordered plan) · `references/motion-teardown-protocol.md` (how to dissect any reference: sequence · trigger · timing · easing · repetition) · `references/liquid-glass.md` (glass/refraction recipes — pick by what is behind the glass) · `references/responsive-doctrine.md` — mobile is designed, not inherited; every breakpoint utility has a base pair; verification always includes 390px.
 
 Tokens always start from `references/design-system-blueprint.md` — never improvise values.
 
@@ -24,11 +25,14 @@ Tokens always start from `references/design-system-blueprint.md` — never impro
 0. **Open the project right**: `references/project-direction-protocol.md` - positioning (who/
    for whom/what feeling) → direction file (PRODUCT.md/DESIGN.md) → hero first → page as
    chapters planned before built.
+0.5 **Declare the world**: `DESIGN_WORLD.md` (one-sentence world, principles, closed tokens,
+   NEVER list) — `references/design-world-never-protocol.md`. On an existing site, run the two
+   isolated critiques against it BEFORE editing.
 1. **Copy first** (`/copywriting`; `/viral-product-strategist` if the offer is weak).
 2. **Tokens** from the Blueprint (dark glass or light paper `:root`).
 3. **Build** with `frontend-design`; components re-skinned to tokens (21st.dev / Magic UI / SkiperUI allowed, never raw).
 4. **Motion**: CSS reveal for static HTML; `motion-foundations` → `motion-patterns` for React. GSAP/Lenis only when cinematic scroll is the brief.
-5. **Polish/QA**: `impeccable` critique → `ui-review` → `accessibility-compliance` → `seo`.
+5. **Polish/QA**: blind critique vs the NEVER list + `impeccable` critique → `ui-review` → `accessibility-compliance` → `seo`.
 6. **Verify by looking**: follow `references/responsive-doctrine.md` — 390/768/1440 screenshots with the changed section scrolled into view, step-scroll audit at 390 for full pages, no horizontal overflow, Lighthouse mobile. Content must be SSR-visible (reveals never gate visibility). **Desktop-only verification is a bug.**
 
 ## Performance budget (premium = light; heavy kills the illusion)

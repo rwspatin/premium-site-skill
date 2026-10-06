@@ -14,6 +14,8 @@ like at maximum fidelity (see ai-prompting-protocol.md).
 | `loopstack.md` (27 KB) | Black "footer hero" single screen | Video fill w/ radial fade into page; pinned giant wordmark; pulsing status dot; footer-as-hero composition |
 | `baseline.md` (39 KB) | Editorial navy tennis club (Lenis only) | Word-by-word clip-mask headline reveal; ghost words behind carousel; tilted photo cards; plain-JS rAF spring helper (no framework) |
 
+For motion/promo FILMS (not sites), the equivalent bar is `../prompt-motion-gallery.md`.
+
 Rules of use:
 - These are STUDY/SCAFFOLD material - shipping one as-is for a client violates the
   build-plan protocol (every brand demands its own solution). Re-skin to Blueprint tokens.
