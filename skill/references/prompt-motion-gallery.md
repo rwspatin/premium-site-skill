@@ -147,6 +147,25 @@ Skill repos behind those entries: [cinetic](https://github.com/Leonxlnx/cinetic)
 Read a skill before reinventing a film pipeline; adopt pieces, re-skin to our tokens.
 
 ## Using it on a site (not just videos)
+**The bridge: `seek(t)` → `seek(scroll)`.** The best prompts draw every frame as a pure
+function of time. On a site, feed that same function with scroll progress
+(`useScroll({ target, offset })` → `useTransform(progress, v => sample(v).x)`): the film
+plays forward and backward with the reader, no video file, no new library.
+Recipe (renanspatin.com, "Como posso ajudar" diagram, 2026-10-06):
+- One element never cut (from "Shape morphing through UI states"): a brass point carries a
+  request down UI → API → domain → data and the response climbs a brass rail back.
+- Keyframe table `[progress, x, y]` with holds at each stop, eased per segment (from
+  "Launch video remake comparison"); the point stretches along its direction of travel
+  (`scaleX/scaleY = 1 + k·sin(πt)`, transform only — never width/height).
+- Each layer's stroke goes accent while the request is inside; a mono log line writes in
+  with a short blur and STAYS (ledger), so the end state explains itself.
+- Server, reduced motion and print render the finished state (all logs visible): use a
+  constant `useMotionValue(1)` until hydrated or when `useReducedMotion()`.
+- Sticky panels don't move relative to the viewport — drive them from the scrolling
+  sibling (the list/grid), not from the panel itself. Tune `offset` until the sequence
+  finishes while the drawing is fully on screen (desktop `["start 60%","start 5%"]`,
+  mobile `["start 80%","end 70%"]`). Verify with a stepped-scroll still strip and a
+  screencast.
 The moves port to web motion (motion/react, CSS): UI-state morph → shared-layout
 transitions (`layoutId`); kinetic type → SplitText reveals ordered by hierarchy; directional
 blur on fast moves → `filter: blur()` keyed to velocity, only on transform-driven elements.
